@@ -40,7 +40,7 @@ cacheSolve <- function(x, ...) {
 	## checks if cache with inverse matrix is set
 	if(!is.null(cacheInvM)) {
 		message("getting cached data")
-		return(m)
+		return(cacheInvM)
 	}
 	## if chache is not set calculate inverse of matrix and set it,
 	## next return calculation
