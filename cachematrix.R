@@ -1,13 +1,16 @@
 ## Function makeCacheMatrix
-## stores matrix "x" and cache its inverse matrix "cacheInvM"
-## Operators set and get do not check parameters
-##
-## operators
-## set(x) store matrix "x"
-## get() returns matrix
-## setInvM(invM) cache inversed matrix
-## getInvM() returns inverted matrix
-## ! remember you get what you set (no cheking if matrix is inversed or not)
+## Creates list of functions which operates on 2 internal variables
+## Is used with function cacheSolve as cache for inverse matrix.
+## Function argument can be matrix
+## !you get what you set = no cheking if it is matrix or is inversed
+## Functions names are misleading, but are created for function cacheSolve()
+
+## Internal functions from list
+## set(x) store variable "x" and cleans cachedInvM
+## get() returns variable x
+## setInvM(invM) set variable cachedInVM
+## getInvM() returns variable cachedInVM
+
 
 makeCacheMatrix <- function(x = matrix()) {
 	## variablem with inverted matrix initially set to NULL
@@ -31,7 +34,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## Function cacheSolve inverses and caches matrix stored in variable x
+## x have to be created with function makeCacheMatrix()
+## Function checks if inversed matrix exist in variable x 
+## Next if not exists calculates it set value in x and returns it
+## If exists just return it without calculations
+
 
 cacheSolve <- function(x, ...) {
 	## Return a matrix that is the inverse of 'x'
