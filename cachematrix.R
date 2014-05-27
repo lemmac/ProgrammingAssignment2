@@ -34,11 +34,13 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Function cacheSolve inverses and caches matrix stored in variable x
-## x have to be created with function makeCacheMatrix()
-## Function checks if inversed matrix exist in variable x 
-## Next if not exists calculates it set value in x and returns it
-## If exists just return it without calculations
+## Function cacheSolve returns inversed matrix from variable x
+## x have to be created with function makeCacheMatrix() and inner matrix
+## have to be set.
+## Function checks if inversed matrix of inner matrix exist in variable x
+## If not exists calculates it from inner matrix, 
+## sets value in x and returns it
+## If inversed matrix exists just returns it without calculations
 
 
 cacheSolve <- function(x, ...) {
